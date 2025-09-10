@@ -23,6 +23,7 @@ Close the Simulation Once done, by going to Simulation → "Close Simulation
 Input/Output Signal Diagram:
 
 RTL Code:
+```
 module seven_segment(
     input  [3:0] bcd,       
     output reg [6:0] seg      
@@ -44,8 +45,9 @@ case(bcd)
     endcase
 end
 endmodule
-
+```
 TestBench:
+```
 module segg7_tb;
 reg [3:0]bcd_t;
 wire [6:0]seg_t;
@@ -59,7 +61,7 @@ bcd_t=4'b1000;
 bcd_t=4'b0011;
 end
 endmodule
-
+```
 Output waveform:
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/857b80eb-7783-432e-8f17-5b19d0cc1ce9" />
 
