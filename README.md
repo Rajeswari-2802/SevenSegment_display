@@ -22,11 +22,13 @@ Close the Simulation Once done, by going to Simulation → "Close Simulation
 
 Input/Output Signal Diagram:
 
-RTL Code:module seven_segment(
+RTL Code:
+module seven_segment(
     input  [3:0] bcd,       
     output reg [6:0] seg      
 );
-always @(*)begin
+always @(bcd)
+begin
 case(bcd)
         4'b0000: seg = 7'b0111111; 
         4'b0001: seg = 7'b0000110; 
@@ -43,7 +45,8 @@ case(bcd)
 end
 endmodule
 
-TestBench:module segg7_tb;
+TestBench:
+module segg7_tb;
 reg [3:0]bcd_t;
 wire [6:0]seg_t;
 seven_segment dut(.bcd(bcd_t), .seg(seg_t));
@@ -57,7 +60,9 @@ bcd_t=4'b0011;
 end
 endmodule
 
-Output waveform:<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/857b80eb-7783-432e-8f17-5b19d0cc1ce9" />
+Output waveform:
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/857b80eb-7783-432e-8f17-5b19d0cc1ce9" />
 
 
-Conclusion:Thus,The design and simulated a Seven Segment using Verilog HDL and verified its functionality through a testbench using the Vivado simulation environment
+Conclusion:
+Thus,The design and simulated a Seven Segment using Verilog HDL and verified its functionality through a testbench using the Vivado simulation environment
